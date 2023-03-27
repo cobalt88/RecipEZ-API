@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
-mongoose.Promise = global.Promise;
-mongoose.connect(config.uri, (err) => {
+import { Promise, connect } from "mongoose";
+Promise = global.Promise;
+connect(config.uri, (err) => {
   if (err) {
     console.log("Could not connect to database");
     process.exit();
   }
 });
-module.exports = { mongoose };
+export default { mongoose };
